@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>비엔비컴퍼니 | B&amp;B COMPANY</title>
+<meta name="description" content="비엔비컴퍼니는 엄선한 생두를 신선하게 로스팅하여 카페·레스토랑·오피스에 공급하는 원두 유통 전문기업입니다.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="비엔비컴퍼니 | B&amp;B COMPANY">
+<meta property="og:description" content="좋은 원두가 좋은 한 잔을 만듭니다. 원두 납품 · OEM · 머신 렌탈 · 창업 컨설팅">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=Noto+Serif+KR:wght@500;700&family=Cormorant+Garamond:wght@500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#0f2a4a;
+    --blue:#1f5fa8;
+    --sky:#3a8dd8;
+    --coffee:#4a2e1f;
+    --bean:#7a4b2e;
+    --crema:#c89b6d;
+    --cream:#f7f2ea;
+    --paper:#fffdf9;
+    --ink:#222;
+    --muted:#6b6b6b;
+    --line:#e6ded2;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:'Noto Sans KR',sans-serif;color:var(--ink);background:var(--paper);line-height:1.7;word-break:keep-all}
+  a{color:inherit;text-decoration:none}
+  img{max-width:100%;display:block}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+
+  /* ===== Header ===== */
+  header{position:sticky;top:0;z-index:50;background:rgba(255,253,249,.95);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:78px}
+  .logo img{height:52px;width:auto}
+  .menu{display:flex;gap:36px;font-size:15px;font-weight:500}
+  .menu a{position:relative;padding:6px 0;color:#333}
+  .menu a::after{content:"";position:absolute;left:0;bottom:0;width:0;height:2px;background:var(--blue);transition:.25s}
+  .menu a:hover{color:var(--blue)}
+  .menu a:hover::after{width:100%}
+  .call{display:flex;align-items:center;gap:8px;background:var(--navy);color:#fff;padding:10px 18px;border-radius:40px;font-size:14px;font-weight:500}
+  .burger{display:none;background:none;border:0;font-size:26px;cursor:pointer;color:var(--navy)}
+
+  /* ===== Hero ===== */
+  .hero{position:relative;min-height:640px;display:flex;align-items:center;color:#fff;overflow:hidden;
+    background:
+      linear-gradient(100deg,rgba(15,42,74,.92) 0%,rgba(15,42,74,.7) 45%,rgba(74,46,31,.35) 100%),
+      url('https://images.unsplash.com/photo-1447933601403-0c6688de566e?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;}
+  .hero .eyebrow{font-family:'Cormorant Garamond',serif;letter-spacing:.3em;font-size:16px;color:var(--crema);margin-bottom:18px}
+  .hero h1{font-family:'Noto Serif KR',serif;font-size:52px;line-height:1.3;font-weight:700;margin-bottom:22px}
+  .hero h1 em{font-style:normal;color:var(--crema)}
+  .hero p{font-size:18px;font-weight:300;opacity:.92;max-width:560px;margin-bottom:38px}
+  .btns{display:flex;gap:12px;flex-wrap:wrap}
+  .btn{display:inline-block;padding:15px 30px;border-radius:4px;font-weight:500;font-size:15px;transition:.2s}
+  .btn-primary{background:var(--crema);color:var(--coffee)}
+  .btn-primary:hover{background:#d8ad80}
+  .btn-ghost{border:1px solid rgba(255,255,255,.6);color:#fff}
+  .btn-ghost:hover{background:rgba(255,255,255,.1)}
+  .hero-stats{position:absolute;bottom:0;left:0;right:0;background:rgba(255,255,255,.08);border-top:1px solid rgba(255,255,255,.15)}
+  .hero-stats .wrap{display:grid;grid-template-columns:repeat(4,1fr)}
+  .stat{padding:22px 10px;text-align:center;border-right:1px solid rgba(255,255,255,.12)}
+  .stat:last-child{border-right:0}
+  .stat b{display:block;font-family:'Cormorant Garamond',serif;font-size:34px;color:var(--crema);line-height:1.1}
+  .stat span{font-size:13px;opacity:.85}
+
+  /* ===== Section common ===== */
+  section{padding:110px 0}
+  .sec-head{text-align:center;margin-bottom:60px}
+  .sec-head .en{font-family:'Cormorant Garamond',serif;letter-spacing:.25em;color:var(--bean);font-size:15px;font-weight:600}
+  .sec-head h2{font-family:'Noto Serif KR',serif;font-size:36px;color:var(--navy);margin:8px 0 14px}
+  .sec-head p{color:var(--muted);font-size:16px}
+  .sec-head .bar{width:40px;height:2px;background:var(--crema);margin:18px auto 0}
+  .sample{display:inline-block;font-size:11px;color:#a06a3a;background:#fbefe2;border:1px dashed #e0b88f;border-radius:20px;padding:2px 10px;margin-left:6px;vertical-align:middle}
+
+  /* ===== About ===== */
+  #about{background:var(--paper)}
+  .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center}
+  .about-img{position:relative}
+  .about-img img{border-radius:6px;height:480px;width:100%;object-fit:cover}
+  .about-img .badge{position:absolute;right:-24px;bottom:-24px;background:var(--navy);color:#fff;padding:26px 30px;border-radius:6px;box-shadow:0 20px 40px rgba(0,0,0,.15)}
+  .about-img .badge b{font-family:'Cormorant Garamond',serif;font-size:40px;color:var(--crema);display:block;line-height:1}
+  .about-img .badge span{font-size:13px}
+  .about-txt .en{font-family:'Cormorant Garamond',serif;letter-spacing:.25em;color:var(--bean);font-size:15px;font-weight:600}
+  .about-txt h3{font-family:'Noto Serif KR',serif;font-size:32px;color:var(--navy);line-height:1.45;margin:10px 0 24px}
+  .about-txt p{color:#444;margin-bottom:16px}
+  .sign{margin-top:28px;padding-top:22px;border-top:1px solid var(--line);display:flex;align-items:baseline;gap:14px}
+  .sign small{color:var(--muted)}
+  .sign strong{font-family:'Noto Serif KR',serif;font-size:22px;letter-spacing:.3em;color:var(--navy)}
+  .values{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:80px}
+  .value{background:#fff;border:1px solid var(--line);border-radius:6px;padding:34px 28px;transition:.25s}
+  .value:hover{transform:translateY(-4px);box-shadow:0 14px 30px rgba(15,42,74,.08)}
+  .value .ic{width:52px;height:52px;border-radius:50%;background:var(--cream);display:flex;align-items:center;justify-content:center;font-size:24px;margin-bottom:18px}
+  .value h4{font-size:19px;color:var(--navy);margin-bottom:8px}
+  .value p{font-size:14.5px;color:var(--muted)}
+
+  /* ===== History ===== */
+  #history{background:var(--cream)}
+  .timeline{position:relative;max-width:900px;margin:0 auto}
+  .timeline::before{content:"";position:absolute;left:50%;top:0;bottom:0;width:2px;background:linear-gradient(var(--crema),var(--bean));transform:translateX(-50%)}
+  .tl{position:relative;width:50%;padding:0 50px 46px}
+  .tl:nth-child(odd){left:0;text-align:right}
+  .tl:nth-child(even){left:50%}
+  .tl::after{content:"";position:absolute;top:8px;width:16px;height:16px;border-radius:50%;background:#fff;border:4px solid var(--bean)}
+  .tl:nth-child(odd)::after{right:-8px}
+  .tl:nth-child(even)::after{left:-8px}
+  .tl .year{font-family:'Cormorant Garamond',serif;font-size:36px;color:var(--bean);font-weight:600;line-height:1}
+  .tl ul{list-style:none;margin-top:10px}
+  .tl li{color:#444;font-size:15px;margin:4px 0}
+  .tl li b{color:var(--navy);font-weight:500;margin-right:6px}
+
+  /* ===== Products ===== */
+  .products{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+  .prd{background:#fff;border:1px solid var(--line);border-radius:6px;overflow:hidden;transition:.25s}
+  .prd:hover{box-shadow:0 18px 36px rgba(74,46,31,.12);transform:translateY(-4px)}
+  .prd .thumb{height:200px;background-size:cover;background-position:center;position:relative}
+  .prd .tag{position:absolute;top:14px;left:14px;background:var(--navy);color:#fff;font-size:12px;padding:3px 10px;border-radius:20px}
+  .prd .body{padding:22px}
+  .prd h4{font-size:18px;color:var(--navy)}
+  .prd .origin{font-size:13px;color:var(--bean);margin:2px 0 10px}
+  .prd p{font-size:14px;color:var(--muted);min-height:66px}
+  .notes{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
+  .notes span{font-size:12px;background:var(--cream);color:var(--coffee);padding:3px 10px;border-radius:20px}
+  .roast{display:flex;gap:4px;margin-top:14px;align-items:center;font-size:12px;color:var(--muted)}
+  .roast i{width:16px;height:6px;border-radius:3px;background:#eadfd2}
+  .roast i.on{background:var(--bean)}
+
+  /* ===== Services ===== */
+  #service{background:var(--navy);color:#fff}
+  #service .sec-head h2{color:#fff}
+  #service .sec-head p{color:rgba(255,255,255,.7)}
+  #service .sec-head .en{color:var(--crema)}
+  .svc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(255,255,255,.12);border-radius:6px;overflow:hidden}
+  .svc{background:var(--navy);padding:40px 30px;transition:.25s}
+  .svc:hover{background:#163a63}
+  .svc .num{font-family:'Cormorant Garamond',serif;font-size:15px;color:var(--crema);letter-spacing:.2em}
+  .svc .ic{font-size:34px;margin:14px 0}
+  .svc h4{font-size:19px;margin-bottom:10px}
+  .svc p{font-size:14px;color:rgba(255,255,255,.72)}
+  .process{display:grid;grid-template-columns:repeat(5,1fr);gap:16px;margin-top:70px;counter-reset:step}
+  .step{text-align:center;position:relative}
+  .step::before{counter-increment:step;content:counter(step,decimal-leading-zero);display:flex;align-items:center;justify-content:center;width:64px;height:64px;margin:0 auto 14px;border:1px solid var(--crema);border-radius:50%;font-family:'Cormorant Garamond',serif;font-size:22px;color:var(--crema)}
+  .step:not(:last-child)::after{content:"";position:absolute;top:32px;left:calc(50% + 40px);right:calc(-50% + 40px);border-top:1px dashed rgba(200,155,109,.6)}
+  .step b{display:block;font-size:16px}
+  .step span{font-size:13px;color:rgba(255,255,255,.65)}
+
+  /* ===== Clients ===== */
+  .client-tabs{display:flex;justify-content:center;gap:10px;margin-bottom:34px;flex-wrap:wrap}
+  .client-tabs button{border:1px solid var(--line);background:#fff;padding:9px 20px;border-radius:30px;font-family:inherit;font-size:14px;cursor:pointer;color:#555}
+  .client-tabs button.on{background:var(--navy);border-color:var(--navy);color:#fff}
+  .clients{display:grid;grid-template-columns:repeat(5,1fr);gap:16px}
+  .client{height:96px;border:1px solid var(--line);border-radius:6px;background:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;transition:.2s}
+  .client:hover{border-color:var(--crema)}
+  .client b{font-size:16px;color:#555;letter-spacing:.02em}
+  .client small{font-size:12px;color:#999}
+  .client.hide{display:none}
+
+  /* ===== CTA ===== */
+  .cta{padding:80px 0;background:
+      linear-gradient(rgba(74,46,31,.85),rgba(74,46,31,.85)),
+      url('https://images.unsplash.com/photo-1511920170033-f8396924c348?auto=format&fit=crop&w=1920&q=80') center/cover;color:#fff;text-align:center}
+  .cta h3{font-family:'Noto Serif KR',serif;font-size:30px;margin-bottom:10px}
+  .cta p{opacity:.85;margin-bottom:28px}
+  .cta .tel{font-family:'Cormorant Garamond',serif;font-size:48px;color:var(--crema);letter-spacing:.05em;display:block;margin-bottom:24px}
+
+  /* ===== Contact ===== */
+  .contact-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:50px}
+  .info-card{background:var(--cream);border-radius:6px;padding:40px}
+  .info-card h4{font-family:'Noto Serif KR',serif;font-size:22px;color:var(--navy);margin-bottom:24px}
+  .info-row{display:flex;gap:14px;padding:13px 0;border-bottom:1px solid var(--line);font-size:15px}
+  .info-row:last-child{border-bottom:0}
+  .info-row dt{width:84px;flex-shrink:0;color:var(--bean);font-weight:500}
+  .info-row dd{color:#333}
+  .map{margin-top:20px;height:220px;border-radius:6px;overflow:hidden;background:#e9e4dc;display:flex;align-items:center;justify-content:center;color:#999;font-size:14px;border:1px solid var(--line)}
+  form{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  form .full{grid-column:1/-1}
+  form label{display:block;font-size:13px;color:var(--muted);margin-bottom:6px}
+  form input,form select,form textarea{width:100%;padding:13px 14px;border:1px solid var(--line);border-radius:4px;font-family:inherit;font-size:15px;background:#fff}
+  form input:focus,form select:focus,form textarea:focus{outline:none;border-color:var(--blue)}
+  form textarea{height:140px;resize:vertical}
+  form .agree{font-size:13px;color:var(--muted);display:flex;gap:8px;align-items:center}
+  form .agree input{width:auto}
+  form button{grid-column:1/-1;padding:16px;background:var(--navy);color:#fff;border:0;border-radius:4px;font-family:inherit;font-size:16px;font-weight:500;cursor:pointer}
+  form button:hover{background:var(--blue)}
+
+  /* ===== Footer ===== */
+  footer{background:#0b1f37;color:rgba(255,255,255,.65);padding:56px 0 30px;font-size:14px}
+  .ft{display:flex;justify-content:space-between;gap:40px;flex-wrap:wrap}
+  .ft-logo{background:#fff;padding:10px 14px;border-radius:4px;display:inline-block;margin-bottom:16px}
+  .ft-logo img{height:40px}
+  .ft p{line-height:1.9}
+  .ft p span{margin-right:14px}
+  .ft-links{display:flex;gap:24px}
+  .ft-links a:hover{color:#fff}
+  .copy{margin-top:36px;padding-top:22px;border-top:1px solid rgba(255,255,255,.1);font-size:13px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+
+  /* ===== Responsive ===== */
+  @media (max-width:1024px){
+    .products,.svc-grid{grid-template-columns:repeat(2,1fr)}
+    .clients{grid-template-columns:repeat(3,1fr)}
+  }
+  @media (max-width:860px){
+    .menu,.call{display:none}
+    .burger{display:block}
+    .menu.open{display:flex;flex-direction:column;position:absolute;top:78px;left:0;right:0;background:#fff;padding:20px 24px;gap:14px;border-bottom:1px solid var(--line)}
+    .hero{min-height:600px}
+    .hero h1{font-size:34px}
+    .hero-stats .wrap{grid-template-columns:repeat(2,1fr)}
+    .stat:nth-child(2){border-right:0}
+    .about-grid,.contact-grid{grid-template-columns:1fr;gap:50px}
+    .about-img .badge{right:16px;bottom:-20px}
+    .about-img img{height:320px}
+    .values{grid-template-columns:1fr}
+    .timeline::before{left:10px}
+    .tl,.tl:nth-child(even){width:100%;left:0;text-align:left;padding:0 0 36px 40px}
+    .tl:nth-child(odd){text-align:left}
+    .tl:nth-child(odd)::after,.tl:nth-child(even)::after{left:2px;right:auto}
+    .process{grid-template-columns:1fr 1fr}
+    .step::after{display:none}
+    section{padding:80px 0}
+    .sec-head h2{font-size:28px}
+  }
+  @media (max-width:520px){
+    .products,.svc-grid{grid-template-columns:1fr}
+    .clients{grid-template-columns:repeat(2,1fr)}
+    form{grid-template-columns:1fr}
+    .hero-stats{position:static}
+    .hero{flex-direction:column;justify-content:center;padding-top:80px}
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ HEADER ============ -->
+<header>
+  <div class="wrap nav">
+    <a href="#top" class="logo"><img src="assets/logo.png" alt="B&amp;B COMPANY 비엔비컴퍼니"></a>
+    <nav class="menu" id="menu">
+      <a href="#about">회사소개</a>
+      <a href="#history">연혁</a>
+      <a href="#products">원두소개</a>
+      <a href="#service">서비스</a>
+      <a href="#clients">주요거래처</a>
+      <a href="#contact">고객문의</a>
+    </nav>
+    <a href="tel:15669048" class="call">☎ 1566-9048</a>
+    <button class="burger" onclick="document.getElementById('menu').classList.toggle('open')" aria-label="메뉴">☰</button>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="top">
+  <div class="wrap">
+    <div class="eyebrow">SPECIALTY COFFEE BEANS SUPPLIER</div>
+    <h1>좋은 원두가<br><em>좋은 한 잔</em>을 만듭니다</h1>
+    <p>비엔비컴퍼니는 산지에서 엄선한 생두를 신선하게 로스팅하여<br>카페 · 레스토랑 · 오피스에 안정적으로 공급하는 원두 유통 전문기업입니다.</p>
+    <div class="btns">
+      <a href="#products" class="btn btn-primary">원두 라인업 보기</a>
+      <a href="#contact" class="btn btn-ghost">납품 상담 신청</a>
+    </div>
+  </div>
+  <div class="hero-stats">
+    <div class="wrap">
+      <div class="stat"><b>15+</b><span>원산지 네트워크</span></div>
+      <div class="stat"><b>300+</b><span>거래 매장</span></div>
+      <div class="stat"><b>48h</b><span>로스팅 후 출고</span></div>
+      <div class="stat"><b>365</b><span>안정적 공급 체계</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ABOUT ============ -->
+<section id="about">
+  <div class="wrap">
+    <div class="about-grid">
+      <div class="about-img">
+        <img src="https://images.unsplash.com/photo-1559056199-641a0ac8b55e?auto=format&fit=crop&w=1000&q=80" alt="원두 로스팅">
+        <div class="badge"><b>B&amp;B</b><span>Bean &amp; Brew Partner</span></div>
+      </div>
+      <div class="about-txt">
+        <div class="en">ABOUT US</div>
+        <h3>한 잔의 커피에 담긴 신뢰,<br>비엔비컴퍼니가 지켜갑니다.</h3>
+        <p>비엔비컴퍼니는 커피 산지의 농장과 직접 소통하며 품질 좋은 생두를 들여오고, 고객사의 메뉴와 상권에 맞는 원두를 제안하는 원두 유통 전문기업입니다.</p>
+        <p>단순한 납품을 넘어 블렌딩 개발, 추출 레시피 컨설팅, 장비 관리까지 카페 운영에 필요한 모든 과정을 함께하며, 거래처의 성장이 곧 우리의 성장이라는 마음으로 일하고 있습니다.</p>
+        <p>앞으로도 정직한 품질과 합리적인 가격, 빠른 서비스로 고객 여러분께 보답하겠습니다.</p>
+        <div class="sign"><small>비엔비컴퍼니 대표이사</small><strong>손희영</strong></div>
+      </div>
+    </div>
+
+    <div class="values">
+      <div class="value"><div class="ic">🌱</div><h4>엄선된 생두</h4><p>브라질, 콜롬비아, 에티오피아 등 주요 산지의 스페셜티 등급 생두를 직접 커핑하여 선별합니다.</p></div>
+      <div class="value"><div class="ic">🔥</div><h4>신선한 로스팅</h4><p>주문 후 로스팅하여 48시간 이내 출고하는 시스템으로 원두 본연의 향미를 그대로 전달합니다.</p></div>
+      <div class="value"><div class="ic">🤝</div><h4>파트너십 서비스</h4><p>메뉴 컨설팅부터 머신 A/S, 바리스타 교육까지 거래처 운영을 전방위로 지원합니다.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ HISTORY ============ -->
+<section id="history">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="en">HISTORY</div>
+      <h2>회사 연혁 <span class="sample">예시 내용 · 수정 필요</span></h2>
+      <p>고객과 함께 걸어온 비엔비컴퍼니의 발자취입니다.</p>
+      <div class="bar"></div>
+    </div>
+    <div class="timeline">
+      <div class="tl"><div class="year">2026</div><ul><li><b>03</b>대표번호 1566-9048 개통</li><li><b>06</b>오피스 커피 정기배송 서비스 론칭</li></ul></div>
+      <div class="tl"><div class="year">2024</div><ul><li><b>05</b>자체 블렌드 ‘B&amp;B 시그니처’ 출시</li><li><b>11</b>거래 매장 300곳 돌파</li></ul></div>
+      <div class="tl"><div class="year">2022</div><ul><li><b>02</b>로스팅 설비 증설 및 품질관리실 신설</li><li><b>09</b>프랜차이즈 브랜드 원두 OEM 공급 개시</li></ul></div>
+      <div class="tl"><div class="year">2020</div><ul><li><b>04</b>고양시 일산서구 탄중로 사옥 이전</li><li><b>10</b>커피머신 렌탈 · A/S 사업 시작</li></ul></div>
+      <div class="tl"><div class="year">2018</div><ul><li><b>07</b>비엔비컴퍼니 설립</li><li><b>12</b>남미 · 아프리카 생두 수입 거래 개시</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PRODUCTS ============ -->
+<section id="products">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="en">OUR BEANS</div>
+      <h2>원두 라인업</h2>
+      <p>매장의 메뉴와 고객 취향에 맞춰 선택할 수 있는 다양한 원두를 준비했습니다.</p>
+      <div class="bar"></div>
+    </div>
+    <div class="products">
+      <div class="prd">
+        <div class="thumb" style="background-image:url('https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=600&q=80')"><span class="tag">BEST</span></div>
+        <div class="body">
+          <h4>B&amp;B 시그니처 블렌드</h4><div class="origin">브라질 · 콜롬비아 · 과테말라</div>
+          <p>고소함과 단맛의 균형이 좋아 아메리카노와 라떼 모두에 잘 어울리는 대표 블렌드</p>
+          <div class="notes"><span>다크초콜릿</span><span>견과류</span><span>캐러멜</span></div>
+          <div class="roast">배전도 <i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i></div>
+        </div>
+      </div>
+      <div class="prd">
+        <div class="thumb" style="background-image:url('https://images.unsplash.com/photo-1442512595331-e89e73853f31?auto=format&fit=crop&w=600&q=80')"><span class="tag">ESPRESSO</span></div>
+        <div class="body">
+          <h4>에스프레소 다크 블렌드</h4><div class="origin">브라질 · 인도 · 베트남</div>
+          <p>묵직한 바디감과 진한 크레마로 우유와 섞여도 커피 맛이 살아있는 블렌드</p>
+          <div class="notes"><span>스모키</span><span>코코아</span><span>흑설탕</span></div>
+          <div class="roast">배전도 <i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></div>
+        </div>
+      </div>
+      <div class="prd">
+        <div class="thumb" style="background-image:url('https://images.unsplash.com/photo-1587734195503-904fca47e0e9?auto=format&fit=crop&w=600&q=80')"><span class="tag">SINGLE ORIGIN</span></div>
+        <div class="body">
+          <h4>에티오피아 예가체프 G1</h4><div class="origin">에티오피아 · 워시드</div>
+          <p>화사한 꽃향과 산뜻한 산미가 특징으로 핸드드립 메뉴에 추천하는 싱글오리진</p>
+          <div class="notes"><span>자스민</span><span>레몬</span><span>베르가못</span></div>
+          <div class="roast">배전도 <i class="on"></i><i class="on"></i><i></i><i></i><i></i></div>
+        </div>
+      </div>
+      <div class="prd">
+        <div class="thumb" style="background-image:url('https://images.unsplash.com/photo-1497935586351-b67a49e012bf?auto=format&fit=crop&w=600&q=80')"><span class="tag">DECAF</span></div>
+        <div class="body">
+          <h4>콜롬비아 디카페인</h4><div class="origin">콜롬비아 · 슈가케인 공법</div>
+          <p>카페인 97% 이상 제거, 늦은 시간에도 부담 없이 즐길 수 있는 부드러운 디카페인</p>
+          <div class="notes"><span>밀크초콜릿</span><span>사과</span><span>꿀</span></div>
+          <div class="roast">배전도 <i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SERVICE ============ -->
+<section id="service">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="en">BUSINESS</div>
+      <h2>사업 분야 · 서비스</h2>
+      <p>원두 공급부터 매장 운영 지원까지, 커피 비즈니스의 든든한 파트너가 되겠습니다.</p>
+      <div class="bar"></div>
+    </div>
+    <div class="svc-grid">
+      <div class="svc"><div class="num">01</div><div class="ic">☕</div><h4>원두 납품</h4><p>카페 · 레스토랑 · 호텔 등 업장 규모에 맞는 정기 · 수시 납품</p></div>
+      <div class="svc"><div class="num">02</div><div class="ic">🏷️</div><h4>OEM · 자체 블렌딩</h4><p>브랜드 전용 블렌드 개발 및 PB 원두 · 드립백 제작</p></div>
+      <div class="svc"><div class="num">03</div><div class="ic">⚙️</div><h4>머신 렌탈 · A/S</h4><p>에스프레소 머신 · 그라인더 렌탈, 정기 점검과 신속한 수리</p></div>
+      <div class="svc"><div class="num">04</div><div class="ic">🎓</div><h4>창업 · 교육 컨설팅</h4><p>카페 창업 상담, 메뉴 레시피 개발, 바리스타 실무 교육</p></div>
+    </div>
+    <div class="process">
+      <div class="step"><b>상담 신청</b><span>전화 · 온라인 문의</span></div>
+      <div class="step"><b>방문 · 샘플 제공</b><span>매장 분석 및 시음</span></div>
+      <div class="step"><b>원두 · 조건 협의</b><span>메뉴 맞춤 제안</span></div>
+      <div class="step"><b>계약 · 첫 납품</b><span>세팅 및 레시피 교육</span></div>
+      <div class="step"><b>정기 관리</b><span>품질 · 장비 점검</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CLIENTS ============ -->
+<section id="clients">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="en">CLIENTS</div>
+      <h2>주요 거래처 <span class="sample">예시 · 실제 거래처로 교체</span></h2>
+      <p>비엔비컴퍼니의 원두를 믿고 사용하는 파트너들입니다.</p>
+      <div class="bar"></div>
+    </div>
+    <div class="client-tabs">
+      <button class="on" data-f="all">전체</button>
+      <button data-f="cafe">카페 · 프랜차이즈</button>
+      <button data-f="food">호텔 · 레스토랑</button>
+      <button data-f="office">기업 · 오피스</button>
+    </div>
+    <div class="clients">
+      <div class="client" data-c="cafe"><b>카페 ○○○</b><small>프랜차이즈</small></div>
+      <div class="client" data-c="cafe"><b>○○ 커피로스터스</b><small>로컬 카페</small></div>
+      <div class="client" data-c="food"><b>○○ 호텔</b><small>라운지 · 조식</small></div>
+      <div class="client" data-c="office"><b>(주)○○○</b><small>사내 카페</small></div>
+      <div class="client" data-c="cafe"><b>○○ 베이커리</b><small>베이커리 카페</small></div>
+      <div class="client" data-c="food"><b>○○ 레스토랑</b><small>이탈리안</small></div>
+      <div class="client" data-c="office"><b>○○ 병원</b><small>로비 카페</small></div>
+      <div class="client" data-c="cafe"><b>○○ 브루잉</b><small>스페셜티</small></div>
+      <div class="client" data-c="office"><b>○○ 대학교</b><small>교내 카페</small></div>
+      <div class="client" data-c="food"><b>○○ 웨딩홀</b><small>연회</small></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CTA ============ -->
+<div class="cta">
+  <div class="wrap">
+    <h3>우리 매장에 맞는 원두, 무료 샘플로 먼저 경험해 보세요</h3>
+    <p>전문 담당자가 매장을 방문하여 원두 시음과 맞춤 상담을 도와드립니다.</p>
+    <a href="tel:15669048" class="tel">1566-9048</a>
+    <a href="#contact" class="btn btn-primary">온라인 문의하기</a>
+  </div>
+</div>
+
+<!-- ============ CONTACT ============ -->
+<section id="contact">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="en">CONTACT</div>
+      <h2>고객 문의 · 오시는 길</h2>
+      <p>납품 · 샘플 · 제휴 문의를 남겨주시면 빠르게 연락드리겠습니다.</p>
+      <div class="bar"></div>
+    </div>
+    <div class="contact-grid">
+      <div>
+        <div class="info-card">
+          <h4>비엔비컴퍼니</h4>
+          <dl>
+            <div class="info-row"><dt>대표이사</dt><dd>손희영</dd></div>
+            <div class="info-row"><dt>대표번호</dt><dd>1566-9048</dd></div>
+            <div class="info-row"><dt>전화</dt><dd>031-917-6161</dd></div>
+            <div class="info-row"><dt>팩스</dt><dd>050-4189-7271</dd></div>
+            <div class="info-row"><dt>휴대폰</dt><dd>010-3394-7271</dd></div>
+            <div class="info-row"><dt>이메일</dt><dd>bnb-company@naver.com</dd></div>
+            <div class="info-row"><dt>주소</dt><dd>경기도 고양시 일산서구 탄중로101번길 41, A동 2층</dd></div>
+          </dl>
+        </div>
+        <div class="map">📍 지도 영역 (네이버 · 카카오맵 연동 위치)</div>
+      </div>
+      <form onsubmit="event.preventDefault();alert('시안 화면입니다. 실제 접수는 개발 시 연동됩니다.');">
+        <div><label>업체명</label><input type="text" placeholder="예) 카페 비엔비"></div>
+        <div><label>담당자명</label><input type="text" placeholder="성함"></div>
+        <div><label>연락처</label><input type="tel" placeholder="010-0000-0000"></div>
+        <div><label>이메일</label><input type="email" placeholder="email@example.com"></div>
+        <div class="full"><label>문의 유형</label>
+          <select><option>원두 납품 상담</option><option>무료 샘플 신청</option><option>OEM · 자체 블렌딩</option><option>머신 렌탈 · A/S</option><option>창업 · 교육 컨설팅</option><option>기타</option></select>
+        </div>
+        <div class="full"><label>문의 내용</label><textarea placeholder="매장 위치, 월 사용량, 원하시는 원두 스타일 등을 적어주세요."></textarea></div>
+        <label class="agree full"><input type="checkbox"> 개인정보 수집 및 이용에 동의합니다.</label>
+        <button type="submit">문의 접수하기</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="wrap">
+    <div class="ft">
+      <div>
+        <div class="ft-logo"><img src="assets/logo.png" alt="B&amp;B COMPANY"></div>
+        <p>
+          <span>상호 : 비엔비컴퍼니 (B&amp;B COMPANY)</span><span>대표이사 : 손희영</span><br>
+          <span>주소 : 경기도 고양시 일산서구 탄중로101번길 41, A동 2층</span><br>
+          <span>대표번호 : 1566-9048</span><span>TEL : 031-917-6161</span><span>FAX : 050-4189-7271</span><br>
+          <span>E-mail : bnb-company@naver.com</span><span>사업자등록번호 : 000-00-00000</span>
+        </p>
+      </div>
+      <div class="ft-links">
+        <a href="#about">회사소개</a><a href="#products">원두소개</a><a href="#contact">고객문의</a><a href="#">개인정보처리방침</a>
+      </div>
+    </div>
+    <div class="copy">
+      <span>© 2026 B&amp;B COMPANY. All rights reserved.</span>
+      <span>www.bnbcompany.net | www.비앤비컴퍼니.net</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // 거래처 필터
+  document.querySelectorAll('.client-tabs button').forEach(function(btn){
+    btn.addEventListener('click',function(){
+      document.querySelectorAll('.client-tabs button').forEach(function(b){b.classList.remove('on')});
+      btn.classList.add('on');
+      var f=btn.dataset.f;
+      document.querySelectorAll('.client').forEach(function(c){
+        c.classList.toggle('hide', f!=='all' && c.dataset.c!==f);
+      });
+    });
+  });
+  // 모바일 메뉴 클릭 시 닫기
+  document.querySelectorAll('#menu a').forEach(function(a){
+    a.addEventListener('click',function(){document.getElementById('menu').classList.remove('open')});
+  });
+</script>
+</body>
+</html>
